@@ -1,0 +1,133 @@
+/* Estilos personalizados */
+
+/* Configuración global */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Barra de navegación */
+.navbar-brand img {
+  margin-right: 10px;
+}
+
+.navbar-brand {
+  font-size: 18px;
+}
+
+.navbar-light {
+  background-color: #4CAF50;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #fff !important;
+}
+
+/* Carrusel de imágenes */
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin-top: 20px;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 20px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* Títulos y encabezados */
+h2 {
+  color: #4CAF50;
+  margin-top: 20px;
+}
+
+/* Bloques de contenido */
+.row img {
+  display: block;
+  margin: 0 auto;
+}
+
+.row h6 {
+  margin-top: 10px;
+  text-align: center;
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.row h8 {
+  text-align: justify;
+  color: #333;
+}
+
+/* Bloques de colores */
+.col-sm-4 {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #fff;
+}
+
+.col-sm-4 h6 {
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.col-sm-4:nth-child(1) {
+  background-color: #4CAF50;
+}
+
+.col-sm-4:nth-child(2) {
+  background-color: #fff;
+  color: #333;
+}
+
+.col-sm-4:nth-child(3) {
+  background-color: #FFA500;
+}

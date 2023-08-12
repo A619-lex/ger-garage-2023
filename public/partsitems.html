@@ -1,0 +1,180 @@
+<html>
+    <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            
+        <script src="https://www.gstatic.com/firebasejs/6.3.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.0.3/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+        <link rel="stylesheet" href="./css/partsItems.css">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="./css/text.css">
+        
+        <title>>Online Parts-Items page</title>
+    </head>
+    <body>
+
+          <!-- Image and text -->
+    
+     <div class="container">
+            <div class="row">
+              <div class="col-xs-12 col-md-8">
+                <a class="navbar-brand" href="#">
+                  <img src="./img/phone-icon-hi.png" width="55" height="55" class="d-inline-block align-top" alt="icon"
+                    align="left">
+                  +353 0838975907
+                <br> 2021210@student.cct.ie
+                </a>
+              </div>
+          
+              <div class="col-xs-12 col-md-4">
+                <h5>Alex’s Garage</h5>
+              </div>
+            </div>
+          </div>
+    
+        <nav class="navbar navbar-light" style="background-color: green;">
+            <!-- Navbar content -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+              <a class="navbar-brand" href="./login.html">Home page</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="./login.html">Login page <span class="sr-only">(current)</span></a>--> 
+                  
+          
+                </div>
+              </div>
+            </nav>
+          
+          </nav>
+       
+          
+          <h1>ONLINE SHOP</h1>
+          <table>
+              <thead>
+                  <tr>
+                      <th>Number</th>
+                      <th>Ítem</th>
+                      <th>Price</th>
+                      <th></th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                      <td>1</td>
+                      <td>A/C CLUTCH</td>
+                      <td>16.99 EUR</td>
+                      <td><button onclick="addToInvoice('A/C CLUTCH', 16.99)">add to car</button></td>
+                  </tr>
+                  <!-- Agregar los otros artículos del inventario -->
+                  <tr>
+                      <td>2</td>
+                      <td>A/C SINGLE LINE</td>
+                      <td>10.99 EUR</td>
+                      <td><button onclick="addToInvoice('A/C SINGLE LINE', 10.99)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>3</td>
+                      <td>A/C DUAL+ LINE</td>
+                      <td>15.99 EUR</td>
+                      <td><button onclick="addToInvoice('A/C DUAL+ LINE', 15.99)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>4</td>
+                      <td>SPARK PLUG</td>
+                      <td>4.50 EUR</td>
+                      <td><button onclick="addToInvoice('SPARK PLUG', 4.50)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>5</td>
+                      <td>OIL FILTER</td>
+                      <td>7.25 EUR</td>
+                      <td><button onclick="addToInvoice('OIL FILTER', 7.25)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>6</td>
+                      <td>BRAKE PADS</td>
+                      <td>25.99 EUR</td>
+                      <td><button onclick="addToInvoice('BRAKE PADS', 25.99)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>7</td>
+                      <td>AIR FILTER</td>
+                      <td>12.75 EUR</td>
+                      <td><button onclick="addToInvoice('AIR FILTER', 12.75)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>8</td>
+                      <td>BATTERY</td>
+                      <td>85.00 EUR</td>
+                      <td><button onclick="addToInvoice('BATTERY', 85.00)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>9</td>
+                      <td>ALTERNATOR</td>
+                      <td>120.00 EUR</td>
+                      <td><button onclick="addToInvoice('ALTERNATOR', 120.00)">add to car</button></td>
+                  </tr>
+                  <tr>
+                      <td>10</td>
+                      <td>RADIATOR</td>
+                      <td>65.50 EUR</td>
+                      <td><button onclick="addToInvoice('RADIATOR', 65.50)">add to car</button></td>
+                  </tr>
+              </tbody>
+          </table>
+      
+          <div id="invoice">
+              <h2>Invoice</h2>
+              <ul id="invoiceItems">
+              </ul>
+              <p>Total: <span id="totalAmount">0</span> EUR</p>
+              <button onclick="generateInvoice()">Generate Invoice</button>
+          </div>
+      
+          <script>
+              let selectedItems = [];
+      
+              function addToInvoice(itemName, price) {
+                  selectedItems.push({ itemName, price });
+                  updateInvoice();
+              }
+      
+              function updateInvoice() {
+                  const invoiceItemsList = document.getElementById('invoiceItems');
+                  const totalAmountSpan = document.getElementById('totalAmount');
+                  let totalAmount = 0;
+      
+                  invoiceItemsList.innerHTML = '';
+                  selectedItems.forEach(item => {
+                      totalAmount += item.price;
+                      const listItem = document.createElement('li');
+                      listItem.textContent = `${item.itemName} - ${item.price} EUR`;
+                      invoiceItemsList.appendChild(listItem);
+                  });
+      
+                  totalAmountSpan.textContent = totalAmount.toFixed(2);
+              }
+      
+              function generateInvoice() {
+                  if (selectedItems.length > 0) {
+                      const invoiceData = selectedItems.map(item => `${item.itemName} - ${item.price} EUR`).join('\n');
+                      alert(`Detalles de la factura:\n\n${invoiceData}\n\nTotal: ${document.getElementById('totalAmount').textContent} EUR`);
+                  } else {
+                      alert('Agrega al menos un artículo a la factura antes de generarla.');
+                  }
+              }
+          </script>
+
+
+
+        <script src="./js/partsitems.js"></script>
+    </body>
+</html>

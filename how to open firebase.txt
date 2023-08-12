@@ -1,0 +1,10 @@
+In order to access the account that I have in Firebase, 
+I am going to attach my username and password. 
+I am going to leave this in the for a while and delete it, 
+so that they can have access to the database and be able to verify the program, 
+the project is called: garage2023 since I have other similar projects that 
+were in charge of creating small projects or copies of security.
+
+alejandrobarrazababj@gmail.com
+
+pass:Alejandrobarraza123!

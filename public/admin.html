@@ -1,0 +1,114 @@
+<html>
+    <head>
+
+        
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+        
+        <link rel="stylesheet" href="./css/admin.css">
+
+       
+        
+        <title>Administrator Page</title>
+    </head>
+    <body>
+
+       
+      <div class="content">
+        <h1>Administrator Page</h1>
+
+
+        <div>
+          <a id="First-Name">Alejandro   </a>
+          <a id="Last-Name">Barraza  </a>
+          <a id="Mobile-number">0838975907</a>
+        </div>
+        <div>
+          <a id="First-Name">First Name   </a>
+          <a id="Last-Name">Last Name   </a>
+          <a id="Mobile-number">Mobile number</a>
+        </div>
+          
+        <a class="nav-item nav-link" href="./carbook.html">Service</a>
+
+        <form id="add-car-form">
+          <div>
+            <input type="text" name="CustomerEmail" id="CustomerEmail">
+            <button onclick="getCdata()">Get Customer Data</button>
+            <div >
+                <label for="validationServer11">Service status</label>
+                <select id="validationServer11" class="form-control is-valid" placeholder="Service status" required>
+                  <option selected>Booked</option>
+                  <option>In Service</option>
+                  <option>Fixed / Completed</option>
+                  <option>Collected</option>
+                  <option>Unrepairable / Scrapped</option>
+                </select>
+              </div>
+              <div>
+                  <div >
+                      <label for="validationServer12">Service mechanic</label>
+                      <select id="validationServer12" class="form-control is-valid" placeholder="Service mechanic" required>
+                        <option selected>Monkey D. Luffy</option>
+                        <option>Roronoa Zoro</option>
+                        <option>Trafalgar D. Law</option>
+                        <option>Shanks</option>
+                      </select>
+                    </div>
+              </form>
+            <button onclick="updatestatus()">update status</button>
+            <button onclick="updatemechanic()">update mechanic </button>
+        <!--  <button onclick="getCdata()" >Create “invoice”</button>  -->
+            
+          </div>
+
+        </form>
+
+        
+        <div class="col-4">
+          <a href="./invoice.html" >
+        <img src="./img/invoice.png" height="90">
+        <h5 style="color:blue;">create an invoice</h5>
+          </a>
+      </div>
+
+      
+      <ul id="car-list">
+      </ul>
+    
+      
+        <script>
+                // Your web app's Firebase configuration
+                var firebaseConfig = {
+                  apiKey: "AIzaSyA64HReCyvT1QCHpI_DSPwcEoSqAualVyA",
+            authDomain: "garage2023-4c7ef.firebaseapp.com",
+            databaseURL: "https://garage2023-4c7ef-default-rtdb.firebaseio.com",
+            projectId: "garage2023-4c7ef",
+            storageBucket: "garage2023-4c7ef.appspot.com",
+            messagingSenderId: "214540517209",
+            appId: "1:214540517209:web:f850d754e01b3a49b3d648"
+             };
+                 // Initialize Firebase
+                firebase.initializeApp(firebaseConfig);
+    
+               // make auth and firestore references
+              
+              const db = firebase.firestore();
+    
+    
+              // update firestore settings
+              db.settings({ timestampsInSnapshots: true });
+
+              </script>
+              <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="./js/admin.js"></script>
+       </body>
+</html>

@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  
+  .content {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #4CAF50;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  div {
+    margin-bottom: 10px;
+  }
+  
+  div a {
+    display: inline-block;
+    margin-right: 20px;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  input[type="text"] {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  select {
+    padding: 8px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .col-4 {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .col-4 a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  ul#car-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  ul#car-list li {
+    padding: 10px;
+    background-color: #f6f6f6;
+    color: #4CAF50;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  

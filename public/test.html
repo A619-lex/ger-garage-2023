@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>contact us</title>
+    <link rel="stylesheet" href="./css/contact.css">
+  </head>
+  <body>
+
+    <header>
+        <h1>alex`s garage</h1>
+        <nav>
+            <ul>
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./login.html">Log in / Sign in</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>We'd love to hear from you! Fill out the form below to get in touch.</p>
+    
+        <div id="container">
+
+        
+
+        <div id="form_container">
+        <input placeholder="Email" type="email" id="email"/>
+
+        <input placeholder="Username" type="name" id="username"/>
+        <input placeholder="message" type="text" id="message"/>
+
+      </div>
+
+      <div id="button_container">
+        <button id="submit" onclick="save()"> SUBMIT MESSAGE </button>
+      </div>
+
+    </div>
+</section>
+<footer>
+    <p>&copy; 2023 CCT COLLEGE. All rights reserved.</p>
+</footer>
+  </body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-database.js"></script>
+  <script src="./js/database.js"></script>
+
+</html>

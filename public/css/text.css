@@ -1,0 +1,82 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+.content {
+  background: #ffffff;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  padding: 20px;
+  background: #f6f6f6;
+  font-size: 16px;
+  color: #67af0a;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+li:nth-child(even) {
+  background: #f2f2f2;
+}
+
+li span {
+  display: block;
+}
+
+li span:nth-child(2) {
+  font-size: 14px;
+  margin-top: 8px;
+  color: #25abe0;
+}
+
+li div {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+li div:hover {
+  background-color: #f2f2f2;
+}
+
+button {
+  border: 0;
+  background: #600fbd;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  letter-spacing: 1px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4c0c9a;
+}

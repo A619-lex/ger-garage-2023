@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tech Talk - Firebase Web</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script src="./js/calendar.js"></script>
+  </head>
+
+  <body>
+        <button onClick="pushData()">Add data to Firebase</button>
+        <button onClick="setData()">Update data to Firebase</button>
+        <input type="value" id="dataValue"></input>
+
+        <div id="here">here</div>
+        <input type="value" id="up"></input>
+        <button onClick="setstatus()">Update Status</button>
+
+        <pre id="json"></pre>
+        <button onClick="getstatus()">Get Status</button>
+    
+  </body>
+</html>
